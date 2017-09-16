@@ -4,11 +4,23 @@ Proyecto de Sistemas Operativos I para el grupo de CentOS del segundo Semestre d
 
 ## Contenido
 
-<img align="right" width="400" src="https://s3-us-west-2.amazonaws.com/assets.site.serverless.com/email/sls-getting-started.gif" />
+<img align="right" width="400" src="http://gdriv.es/gumacos/projectos.jpg" />
 
 * [Pre-requisitos](#pre-requirements)
 * [Construcción del ISO](#make)
 * [Programas](#programs)
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## <a name="pre-requirements"></a>Pre-requisitos
 
