@@ -24,7 +24,7 @@ Proyecto de Sistemas Operativos I para el grupo de CentOS del segundo Semestre d
 
 ## <a name="pre-requirements"></a>Pre-requisitos
 
-[Instalar el cross-compiler de este sitio](https://serverless.com/framework/) como Pre-requisito de la construcción del ISO, este sistema esta desarrollado para una arquitectura de 32-bit y fue construido en un ambiente de Xubuntu 16.04 LTS.
+[Instalar el cross-compiler de este sitio](https://web.archive.org/web/20170620111003/http://wiki.osdev.org/GCC_Cross-Compiler) como Pre-requisito de la construcción del ISO, este sistema esta desarrollado para una arquitectura de 32-bit y fue construido en un ambiente de Xubuntu 16.04 LTS.
 
 ## <a name="make"></a>Construcción del ISO
 
