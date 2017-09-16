@@ -34,7 +34,7 @@ Ejecutar los siguientes comandos en Terminal:
   ```
 4. **Armando ISO de arranque:**
 
-  Copiar el archivo **gumacos.bin** al directorio que se muestra a continuación:
+  Copiar el archivo **gumacos.bin** al directorio que se muestra a continuación, con el explorador de archivos:
 
   ```
   isodir    
@@ -46,6 +46,7 @@ Ejecutar los siguientes comandos en Terminal:
   │       │   grub.cfg
   │       │
   ```
+  Y ejecutar el comando en la Terminal:
 
   ```bash
   grub-mkrescue -o gumacos.iso isodir
