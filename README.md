@@ -1,6 +1,6 @@
 # GumacOS
 
-Proyecto de Sistemas Operativos I para el grupo de CentOS del segundo Semestre del 2017 de la carrera de Ingenieria en Sistemas de la Informacion de la Univerdad Mariano Galvez de Guatemala.
+Proyecto de Sistemas Operativos I, realizado por el grupo de CentOS, segundo semestre del 2017 de la carrera de Ingenieria en Sistemas de la Información de la Univerdad Mariano Galvez de Guatemala.
 
 ## Contenido
 
@@ -8,23 +8,13 @@ Proyecto de Sistemas Operativos I para el grupo de CentOS del segundo Semestre d
 
 * [Pre-requisitos](#pre-requirements)
 * [Construcción del ISO](#make)
+* [Integrantes](#team)
 * [Programas](#programs)
-
-
-
-
-
-
-
-
-
-
-
-
+<br/><br/><br/><br/><br/><br/><br/>
 
 ## <a name="pre-requirements"></a>Pre-requisitos
 
-[Instalar el cross-compiler de este sitio](https://web.archive.org/web/20170620111003/http://wiki.osdev.org/GCC_Cross-Compiler) como Pre-requisito de la construcción del ISO, este sistema esta desarrollado para una arquitectura de 32-bit y fue construido en un ambiente de Xubuntu 16.04 LTS.
+[Instalar el cross-compiler de este sitio](https://web.archive.org/web/20170620111003/http://wiki.osdev.org/GCC_Cross-Compiler) como pre-requisito de la construcción del ISO, este sistema esta desarrollado para una arquitectura de 32-bit y fue construido en un ambiente de Xubuntu 16.04 LTS.
 
 ## <a name="make"></a>Construcción del ISO
 
@@ -38,7 +28,7 @@ Ejecutar los siguientes comandos en Terminal:
   ```bash
   i686-elf-gcc -c kernel.c -o kernel.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra
   ```
-3. **Enlazador del multiboot header y el kernel escrito en C compilado:**
+3. **Enlazador del multiboot header y el kernel compilado escrito en C:**
   ```bash
   i686-elf-gcc -T linker.ld -o gumacos.bin -ffreestanding -O2 -nostdlib boot.o kernel.o -lgcc
   ```
@@ -64,6 +54,14 @@ Ejecutar los siguientes comandos en Terminal:
   ```bash
   qemu-system-i386 -cdrom gumacos.iso
   ```
+## <a name="team"></a>Integrantes
+
+| Nombre | Carné |
+|:-------|:------:|
+|Ana Fernanda Guerra Alvarez|0900-15-3538|
+|Andy Matias Manuel Teletor|0900-13-7773|
+|Sergio Cuxil|0900-16-2835|
+|Isaac Manuel Teletor|0900-11-3870|
 
 ## <a name="programs"></a>Programas
 
