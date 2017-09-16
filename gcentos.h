@@ -1,4 +1,5 @@
-static const char* bootLoader = "                /$$$$$$                                         \n"
+static const char* bootLoader = "Hola mundo, somos:\n" 
+"                /$$$$$$                                         \n"
 "               /$$~~**$$\n"
 "              |*$$  \\~~/  /$$$$$$  /$$   /$$  /$$$$$$   /$$$$$$\n"
 "              |*$$ /$$$$ /$$~~**$$|*$$  |*$$ /$$~~**$$ /$$~~**$$\n"
@@ -20,6 +21,5 @@ static const char* bootLoader = "                /$$$$$$                        
 "          \\~~~~~~/  \\~~~~~~~/|~~/  |~~/   \\~~~/   \\~~~~~~/  \\~~~~~~/\n"
 "\n"
 "Coordinadora: Ana Fernanda Guerra\n"
-"Integrantes: Andy Manuel, Isaac Manuel, Sergio Cuxil\n"
-"                                                            Follow the Rabbit...\n";
+"Integrantes: Andy Manuel, Isaac Manuel, Sergio Cuxil\n";
 //"1234567890!@#+&";
