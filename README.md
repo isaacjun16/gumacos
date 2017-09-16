@@ -68,5 +68,5 @@ Ejecutar los siguientes comandos en Terminal:
 
 | Programa | Autor |
 |:-------|:------:|
-| Calculadora **(En desarrollo)** | Integrante 1 |
-| Reproductor de sonido **(En desarrollo)** | Integrante 2 |
+| Calculadora **(En desarrollo)** | -- |
+| Reproductor de sonido **(En desarrollo)** | -- |
