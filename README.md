@@ -4,7 +4,7 @@ Proyecto de Sistemas Operativos I para el grupo de CentOS del segundo Semestre d
 
 ## Contenido
 
-<img align="right" width="400" src="http://gdriv.es/gumacos/projectos.jpg" />
+<img align="right" width="400" src="https://drive.google.com/uc?export=download&id=0B2C93DEs9kbBX1RkZTdvb3JXc00" />
 
 * [Pre-requisitos](#pre-requirements)
 * [Construcción del ISO](#make)
