@@ -219,9 +219,11 @@ void shell_handle_command() {
 	  char* command;
 	  char* parameters;
 
+		int hasParameters = 0;
 	  if(space_index >= 0){
 	    command = substring(command_buff, 0, space_index);
 	    parameters = substring(command_buff, space_index + 1, len);
+			hasParameters++;
 	  }else{
 	    command = command_buff;
 	    parameters = 0;
@@ -230,7 +232,7 @@ void shell_handle_command() {
 		int command_found = 0;
 		if(strcmp(command, commands[0].command)) {
 			command_found++;
-			if(strlen(parameters) > 0) {
+			if(hasParameters == 1) {
 				terminal_writestring("el comando 'ayuda' no acepta argumentos\n");
 			} else {
 				for(int i = 0; i < index_command; i++) {
