@@ -186,6 +186,9 @@ void terminal_writestring_fancy(const char* data) {
 	terminal_write_fancy(data, terminal_strlen(data));
 }
 
+/**
+	inserta un backspace a la terminal
+*/
 void terminal_backspace(){
 	if(terminal_column > terminal_strlen(terminal_in)) {
 		terminal_column--;
@@ -201,6 +204,9 @@ uint16_t index_buffer = 0;
 command_t commands[10];
 uint8_t index_command = 0;
 
+/**
+	maneja los comando ingresados al shell
+*/
 void shell_handle_command() {
 	if(index_buffer > 0) {
 
@@ -255,17 +261,26 @@ void shell_handle_command() {
 	}
 }
 
+/**
+	reinicia el buffer del shell
+*/
 void shell_reset_buffer() {
   index_buffer = 0;
   memset(shell_buffer, sizeof(shell_buffer), 0);
 }
 
+/**
+	imprime el command prompt del shell
+*/
 void shell_print_gumac() {
 	terminal_color = vga_entry_color(VGA_COLOR_GREEN, VGA_COLOR_BLACK);
 	terminal_writestring(terminal_in);
 	terminal_color = vga_entry_color(VGA_COLOR_WHITE, VGA_COLOR_BLACK);
 }
 
+/**
+	registra nombre del comando y la description de un comando dado
+*/
 void register_command(char* command, char* description) {
   command_t newcommand;
   newcommand.command = command;
@@ -274,6 +289,9 @@ void register_command(char* command, char* description) {
   index_command++;
 }
 
+/**
+	inicializa el shell con un listado de comandos dados
+*/
 void initShell() {
 	memset(commands, sizeof(commands), 0);
 	register_command("ayuda", "imprime este menu");
@@ -282,6 +300,9 @@ void initShell() {
 	register_command("apagar", "apaga la computadora");
 }
 
+/**
+	maneja el caracter ingresado desde el teclado
+*/
 void shell_handle_key(int32_t keycode, char ch) {
   if(keycode > 0 && ch > 2 && index_buffer + 1 < 200 && ch != '\n' && activeShell > 0) {
     terminal_putchar(ch);
@@ -331,6 +352,9 @@ void shell_handle_key(int32_t keycode, char ch) {
 uint8_t shift = 0;
 uint8_t caps = 0;
 
+/**
+	inicializa los Interrupt
+*/
 void init_pics(int pic1, int pic2)
 {
    /* send ICW1 */
@@ -353,6 +377,9 @@ void init_pics(int pic1, int pic2)
    outb(PIC1 + 1, 0xFF);
 }
 
+/**
+	obtiene el codigo de la tecla precionada
+*/
 char getScancode() {
     char c=0;
     do {
@@ -364,9 +391,11 @@ char getScancode() {
     } while(1);
 }
 
+/**
+	maneja la tecla presionada en el teclado y encuentra su carater correspondiente
+	para luego ser enviada al shell
+*/
 void getcharshell(int32_t keycode) {
-	//return scancode[getScancode()+1];
-	//int32_t keycode = getScancode();
 	switch(keycode) {
 		case SHIFT:
 			shift = 1;
