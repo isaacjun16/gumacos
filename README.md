@@ -7,7 +7,8 @@ Proyecto de Sistemas Operativos I, realizado por el grupo de CentOS, segundo sem
 <img align="right" width="400" src="https://drive.google.com/uc?export=download&id=0B2C93DEs9kbBX1RkZTdvb3JXc00" />
 
 * [Pre-requisitos](#pre-requirements)
-* [Construcción del ISO](#make)
+* [Construcción de Ejecutables y del ISO (Forma manual)](#makemanual)
+* [Construcción de Ejecutables y del ISO (Makefile)](#make)
 * [Integrantes](#team)
 * [Programas](#programs)
 <br/><br/><br/><br/><br/><br/><br/>
@@ -16,7 +17,7 @@ Proyecto de Sistemas Operativos I, realizado por el grupo de CentOS, segundo sem
 
 [Instalar el cross-compiler de este sitio](https://web.archive.org/web/20170620111003/http://wiki.osdev.org/GCC_Cross-Compiler) como pre-requisito de la construcción del ISO, este sistema esta desarrollado para una arquitectura de 32-bit y fue construido en un ambiente de Xubuntu 16.04 LTS.
 
-## <a name="make"></a>Construcción del ISO
+## <a name="makemanual"></a>Construcción de Ejecutables y del ISO (Forma manual)
 
 Ejecutar los siguientes comandos en Terminal:
 
@@ -63,6 +64,24 @@ Cambiar /dev/sdx por el nombre correspodiente a el USB a donde se desea instalar
   ```bash
   sudo dd if=gumacos.iso of=/dev/sdx && sync
   ```
+
+## <a name="make"></a>Construcción de Ejecutables y del ISO (Makefile)
+
+Ejecutar los siguientes comandos en Terminal:
+
+1. **Compilación de código fuente:**
+  ```bash
+  make
+  ```
+2. **Armando ISO de arranque:**
+  ```bash
+  make makeiso
+  ```
+3. **Prueba del ISO generado con QEMU:**
+  ```bash
+  make run
+  ```
+
 
 ## <a name="team"></a>Integrantes
 
