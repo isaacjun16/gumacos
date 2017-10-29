@@ -1,5 +1,5 @@
-static const char* bootLoader = "Hola mundo, somos:\n" 
-"                /$$$$$$                                         \n"
+static const char* terminal_in = "gumacos> ";
+static const char* bootLoader = "                /$$$$$$                                         \n"
 "               /$$~~**$$\n"
 "              |*$$  \\~~/  /$$$$$$  /$$   /$$  /$$$$$$   /$$$$$$\n"
 "              |*$$ /$$$$ /$$~~**$$|*$$  |*$$ /$$~~**$$ /$$~~**$$\n"
@@ -21,5 +21,6 @@ static const char* bootLoader = "Hola mundo, somos:\n"
 "          \\~~~~~~/  \\~~~~~~~/|~~/  |~~/   \\~~~/   \\~~~~~~/  \\~~~~~~/\n"
 "\n"
 "Coordinadora: Ana Fernanda Guerra\n"
-"Integrantes: Andy Manuel, Isaac Manuel, Sergio Cuxil\n";
+"Integrantes: Andy Manuel, Isaac Manuel, Sergio Cuxil\n"
+"                                               Presiona ENTER para empezar...";
 //"1234567890!@#+&";
