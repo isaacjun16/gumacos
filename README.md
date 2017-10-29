@@ -65,6 +65,14 @@ Ejecutar los siguientes comandos en Terminal:
   qemu-system-i386 -cdrom gumacos.iso
   ```
 
+6. **Prueba del iso en hardware verdadero (BOOTABLE USB):**
+
+Cambiar /dev/sdx por el nombre correspodiente a el USB a donde se desea instalar la imagen ISO, tomar en cuenta que toda la data del dispositivo que se especifique se eliminara, por lo que TENER MUCHO CUIDADO AL ESPECIFICAR EL [NOMBRE DEL DISPOSITIVO](https://www.debian.org/releases/etch/sparc/apcs04.html.es).
+
+  ```bash
+  sudo dd if=gumacos.iso of=/dev/sdx && sync
+  ```
+
 ## <a name="programs"></a>Programas
 
 | Programa | Autor |
