@@ -1,6 +1,8 @@
 #include <stddef.h>
 #include <stdint.h>
 #include <stdbool.h>
+#include "memory.h"
+#include "string.h"
 
 /**
 	maneja los comando ingresados al shell
@@ -31,7 +33,24 @@ void shell_handle_command() {
 		if(strcmp(command, commands[0].command)) {
 			command_found++;
 			if(hasParameters == 1) {
-				terminal_writestring("el comando 'ayuda' no acepta argumentos\n");
+				int validParameter = 0;
+				for(int i = 0; i < index_command; i++) {
+					if(strcmp(parameters, commands[i].command)) {
+						terminal_writestring(commands[i].command);
+						terminal_writestring(" - ");
+						terminal_writestring(commands[i].description);
+						terminal_writestring("\n\n");
+						terminal_writestring(commands[i].documentation);
+						terminal_putchar('\n');
+						validParameter++;
+					}
+				}
+				if(validParameter == 0){
+					char* fail = "No existe ayuda para el comando '";
+					fail = concat(fail, parameters);
+					fail = concat(fail, "', escriba 'ayuda' para ver comandos validos.\n");
+					terminal_writestring(fail);
+				}
 			} else {
 				for(int i = 0; i < index_command; i++) {
 					terminal_writestring(commands[i].command);
@@ -43,7 +62,8 @@ void shell_handle_command() {
 		}
 
 		if(strcmp(command, commands[1].command)) {
-			terminal_writestring(calc(command, parameters));
+			terminal_writestring(calc(parameters));
+			//terminal_writestring(calc("restar -5 -5"));
 			command_found++;
 		}
 
@@ -81,10 +101,11 @@ void shell_print_gumac() {
 /**
 	registra nombre del comando y la description de un comando dado
 */
-void register_command(char* command, char* description) {
+void register_command(char* command, char* description, char* documentation) {
   command_t newcommand;
   newcommand.command = command;
   newcommand.description = description;
+	newcommand.documentation = documentation;
   commands[index_command] = newcommand;
   index_command++;
 }
@@ -94,10 +115,10 @@ void register_command(char* command, char* description) {
 */
 void shell_init() {
 	memset(commands, sizeof(commands), 0);
-	register_command("ayuda", "imprime este menu");
-	register_command("calc", "realiza operaciones basicas de aritmetica");
-	register_command("sonido", "reproduce un sonido");
-	register_command("apagar", "apaga la computadora");
+	register_command("ayuda", "imprime este menu.", doc_ayuda);
+	register_command("calc", "realiza operaciones basicas de aritmetica.", doc_calc);
+	register_command("sonido", "reproduce un sonido.", doc_sonido);
+	register_command("apagar", "apaga la computadora.", doc_apagar);
 }
 
 /**

@@ -5,6 +5,8 @@
 #endif
 #include <stddef.h>
 #include <stdint.h>
+#include "memory.h"
+#include "string.h"
 
 /* Check if the compiler thinks we are targeting the wrong operating system. */
 #if defined(__linux__)
@@ -32,6 +34,7 @@ uint8_t caps = 0;
 typedef struct command {
   char* command;
   char* description;
+  char* documentation;
 } command_t;
 
 char shell_buffer[200];
@@ -41,10 +44,9 @@ command_t commands[10];
 uint8_t index_command = 0;
 
 #include "gcentos.h"
-#include "string.h"
+#include "doc.h"
 #include "io.h"
 #include "key.h"
-#include "memory.h"
 // METHODS HEADERS GOES HERE
 #include "calc.h"
 // METHODS HEADERS END HERE
