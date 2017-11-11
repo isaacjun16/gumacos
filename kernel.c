@@ -7,6 +7,7 @@
 #include <stdint.h>
 #include "memory.h"
 #include "string.h"
+#include "time.h"
 
 /* Check if the compiler thinks we are targeting the wrong operating system. */
 #if defined(__linux__)
@@ -49,6 +50,8 @@ uint8_t index_command = 0;
 #include "key.h"
 // METHODS HEADERS GOES HERE
 #include "calc.h"
+#include "sound.h"
+#include "system.h"
 // METHODS HEADERS END HERE
 #include "vga.h"
 #include "terminal.h"

@@ -68,10 +68,14 @@ void shell_handle_command() {
 		}
 
 		if(strcmp(command, commands[2].command)) {
+			terminal_writestring("Reproduciendo...\n");
+			beep();
 			command_found++;
 		}
 
 		if(strcmp(command, commands[3].command)) {
+			terminal_writestring("Apagando...\n");
+			apagar();
 			command_found++;
 		}
 
